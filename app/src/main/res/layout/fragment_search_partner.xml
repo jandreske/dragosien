@@ -1,12 +1,207 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
     tools:context="de.dragosien.landryn.dragosien.fragments.SearchPartnerFragment">
+
+
+    <!-- sex -->
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/search_parter_caption_sex" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/et_value_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="m"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+
+    <!-- values -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/search_parter_caption_values" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="K:"/>
+
+        <EditText
+            android:id="@+id/et_value_strength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G:"/>
+
+        <EditText
+            android:id="@+id/et_value_agility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="400"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F:"/>
+
+        <EditText
+            android:id="@+id/et_value_firepower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="400"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="W:"/>
+
+        <EditText
+            android:id="@+id/et_value_willpower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I:"/>
+
+        <EditText
+            android:id="@+id/et_value_intelligence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"/>
+
+        </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+
+    <!-- colors -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/search_parter_caption_colors" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hauptfarbe:"/>
+
+        <EditText
+            android:id="@+id/et_value_main_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rot"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="1dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nebenfarbe:"/>
+
+        <EditText
+            android:id="@+id/et_value_secondary_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gelb"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+
+    <!-- dragball position -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="@string/search_parter_caption_dragball_position" />
+
+    <EditText
+        android:id="@+id/et_value_dragball_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AA"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+
+    <!-- search button -->
+
+    <Button
+        android:id="@+id/button_search_partner"
+        android:text="@string/caption_button_search_partner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+
+    <!-- result -->
+
+    <TextView
+        android:id="@+id/search_result_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

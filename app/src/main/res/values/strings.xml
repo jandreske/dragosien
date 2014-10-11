@@ -7,5 +7,10 @@
     <string name="tab_partners">Partnersuche</string>
     <string name="tab_tables">Tabellen</string>
     <string name="tab_ticker">Live-Ticker</string>
+    <string name="search_parter_caption_sex">Geschlecht</string>
+    <string name="search_parter_caption_values">Fähigkeitswerte</string>
+    <string name="search_parter_caption_colors">Farben</string>
+    <string name="search_parter_caption_dragball_position">Dragball Position</string>
+    <string name="caption_button_search_partner">Partner suchen</string>
 
 </resources>
