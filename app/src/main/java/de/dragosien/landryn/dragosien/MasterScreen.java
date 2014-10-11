@@ -1,17 +1,37 @@
 package de.dragosien.landryn.dragosien;
 
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import de.dragosien.landryn.dragosien.fragments.DragballTableFragment;
+import de.dragosien.landryn.dragosien.fragments.LiveTickerFragment;
+import de.dragosien.landryn.dragosien.fragments.SearchPartnerFragment;
+
 
 public class MasterScreen extends ActionBarActivity {
+
+   private ViewPager masterViewPager;
+   private TabsAdapter tabsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_master_screen);
+       masterViewPager = new ViewPager(this);
+       masterViewPager.setId(R.id.pager);
+       setContentView(masterViewPager);
+       ActionBar bar = getSupportActionBar();
+       bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+       bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+       tabsAdapter = new TabsAdapter(this, masterViewPager);
+
+       //add all the nice tabs
+       tabsAdapter.addTab(bar.newTab().setText(getString(R.string.tab_partners)), SearchPartnerFragment.class, null);
+       tabsAdapter.addTab(bar.newTab().setText(getString(R.string.tab_tables)), DragballTableFragment.class, null);
+       tabsAdapter.addTab(bar.newTab().setText(getString(R.string.tab_ticker)), LiveTickerFragment.class, null);
     }
 
 
@@ -24,9 +44,7 @@ public class MasterScreen extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // handling of actionbar item clicks
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
