@@ -92,6 +92,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <View
+            android:layout_width="160dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/dragon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/egg"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
@@ -101,11 +128,18 @@
             android:text="@string/strength"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textColor="@color/brown"
             android:textSize="18sp"
             android:id="@+id/tv_strength_value"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/brown"
+            android:textSize="18sp"
+            android:id="@+id/tv_strength_value_egg"/>
 
         </LinearLayout>
 
@@ -128,11 +162,18 @@
             android:text="@string/agility"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textColor="@color/darkblue"
             android:textSize="18sp"
             android:id="@+id/tv_agility_value"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkblue"
+            android:textSize="18sp"
+            android:id="@+id/tv_agility_value_egg"/>
 
     </LinearLayout>
 
@@ -154,11 +195,18 @@
             android:text="@string/firepower"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
             android:textSize="18sp"
             android:id="@+id/tv_firepower_value"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:id="@+id/tv_firepower_value_egg"/>
 
     </LinearLayout>
 
@@ -180,11 +228,18 @@
             android:text="@string/willpower"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textColor="@color/green"
             android:textSize="18sp"
             android:id="@+id/tv_willpower_value"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            android:id="@+id/tv_willpower_value_egg"/>
 
     </LinearLayout>
 
@@ -207,11 +262,18 @@
             android:text="@string/intelligence"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textColor="@color/yellow"
             android:textSize="18sp"
             android:id="@+id/tv_intelligence_value"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            android:id="@+id/tv_intelligence_value_egg"/>
 
     </LinearLayout>
 

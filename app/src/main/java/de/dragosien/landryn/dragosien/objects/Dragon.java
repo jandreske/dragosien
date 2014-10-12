@@ -24,7 +24,7 @@ public class Dragon implements Serializable {
    public String mainColor;
    public String secondColor;
 
-   //todomake constants (in PartnerSeachResponse?)
+   //todo make constants (in PartnerSeachResponse?)
    public static Dragon fromPartnerSearchResponse(PartnerSearchResponse response) {
       Dragon dragon = new Dragon();
       try {
@@ -42,5 +42,23 @@ public class Dragon implements Serializable {
          //todo error handling
       }
       return dragon;
+   }
+
+   //todo constants
+   public static Dragon getEggfromPartnerSearchResponse(PartnerSearchResponse response) {
+      Dragon egg = new Dragon();
+      try {
+         JSONObject jsonObject = new JSONObject(response.json);egg.name = jsonObject.getString("name");
+         egg.strength = jsonObject.getInt("ei_kraft");
+         egg.agility = jsonObject.getInt("ei_geschick");
+         egg.firepower = jsonObject.getInt("ei_feuerkraft");
+         egg.willpower = jsonObject.getInt("ei_willenskraft");
+         egg.intelligence = jsonObject.getInt("ei_intelligenz");
+         egg.mainColor = jsonObject.getString("ei_hf");
+         egg.secondColor = jsonObject.getString("ei_nf");
+      } catch (JSONException e) {
+         //todo error handling
+      }
+      return egg;
    }
 }

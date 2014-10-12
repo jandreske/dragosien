@@ -16,19 +16,22 @@ public class PartnerSearchResultActivity extends ActionBarActivity {
    private static final String DRAGON_BASE_URL = "http://www.dragosien.de/dragon/";
    private static final String OWNER_BASE_URL = "http://www.dragosien.de/user/";
 
-   public static void callMe(Fragment fragment, Dragon dragon) {
+   public static void callMe(Fragment fragment, Dragon dragon, Dragon egg) {
       Intent intent = new Intent(fragment.getActivity(), PartnerSearchResultActivity.class);
       intent.putExtra("dragon", dragon);
+      intent.putExtra("egg", egg);
       fragment.startActivity(intent);
    }
 
    private Dragon dragon;
+   private Dragon egg;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_partner_search_result);
       dragon = (Dragon) getIntent().getSerializableExtra("dragon");
+      egg = (Dragon) getIntent().getSerializableExtra("egg");
       updateUI();
    }
 
@@ -45,12 +48,19 @@ public class PartnerSearchResultActivity extends ActionBarActivity {
       tvOwner.setTag(OWNER_BASE_URL + dragon.owner);
       tvOwner.setOnClickListener(linkListener);
 
-      //values
+      //dragon values
       ((TextView) findViewById(R.id.tv_strength_value)).setText(Integer.toString(dragon.strength));
       ((TextView) findViewById(R.id.tv_agility_value)).setText(Integer.toString(dragon.agility));
       ((TextView) findViewById(R.id.tv_firepower_value)).setText(Integer.toString(dragon.firepower));
       ((TextView) findViewById(R.id.tv_willpower_value)).setText(Integer.toString(dragon.willpower));
       ((TextView) findViewById(R.id.tv_intelligence_value)).setText(Integer.toString(dragon.intelligence));
+
+      //egg values
+      ((TextView) findViewById(R.id.tv_strength_value_egg)).setText(Integer.toString(egg.strength));
+      ((TextView) findViewById(R.id.tv_agility_value_egg)).setText(Integer.toString(egg.agility));
+      ((TextView) findViewById(R.id.tv_firepower_value_egg)).setText(Integer.toString(egg.firepower));
+      ((TextView) findViewById(R.id.tv_willpower_value_egg)).setText(Integer.toString(egg.willpower));
+      ((TextView) findViewById(R.id.tv_intelligence_value_egg)).setText(Integer.toString(egg.intelligence));
    }
 
    private View.OnClickListener linkListener = new View.OnClickListener() {

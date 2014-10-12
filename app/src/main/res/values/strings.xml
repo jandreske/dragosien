@@ -14,13 +14,15 @@
     <string name="caption_button_search_partner">Partner suchen</string>
     <string name="hello_world">Hello world!</string>
     <string name="search_result_title">Ergebnis der Partnersuche</string>
-    <string name="caption_dragon_name">Names des Drachen:</string>
-    <string name="caption_dragon_owner">Besitzer des Drachen:</string>
+    <string name="caption_dragon_name">Drache:</string>
+    <string name="caption_dragon_owner">Besitzer:</string>
     <string name="strength">Kraft</string>
     <string name="agility">Geschicklichkeit</string>
     <string name="firepower">Feuerkraft</string>
     <string name="willpower">Willenskraft</string>
     <string name="intelligence">Intelligenz</string>
     <string name="searching_for_partner">Es wird ein Partner gesucht…</string>
+    <string name="dragon">Drache</string>
+    <string name="egg">Ei</string>
 
 </resources>

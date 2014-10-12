@@ -76,9 +76,9 @@ public class SearchPartnerFragment extends Fragment {
 
    private void showSearchResults(PartnerSearchResponse response) {
       progress.dismiss();
-      //todo get the resulting egg as well
       Dragon dragon = Dragon.fromPartnerSearchResponse(response);
-      PartnerSearchResultActivity.callMe(this, dragon);
+      Dragon egg = Dragon.getEggfromPartnerSearchResponse(response);
+      PartnerSearchResultActivity.callMe(this, dragon, egg);
    }
 
    //todo make separate class, use message bus
