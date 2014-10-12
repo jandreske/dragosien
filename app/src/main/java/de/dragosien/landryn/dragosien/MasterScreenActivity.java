@@ -11,7 +11,7 @@ import de.dragosien.landryn.dragosien.fragments.DragballTableFragment;
 import de.dragosien.landryn.dragosien.fragments.LiveTickerFragment;
 import de.dragosien.landryn.dragosien.fragments.SearchPartnerFragment;
 
-public class MasterScreen extends ActionBarActivity {
+public class MasterScreenActivity extends ActionBarActivity {
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {

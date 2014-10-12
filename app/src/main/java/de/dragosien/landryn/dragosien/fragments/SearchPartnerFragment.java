@@ -1,10 +1,8 @@
 package de.dragosien.landryn.dragosien.fragments;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -22,11 +19,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.SocketTimeoutException;
 import java.net.URI;
-import java.net.URL;
 
+import de.dragosien.landryn.dragosien.PartnerSearchResultActivity;
 import de.dragosien.landryn.dragosien.R;
 import de.dragosien.landryn.dragosien.objects.Dragon;
 import de.dragosien.landryn.dragosien.objects.PartnerSearchResponse;
@@ -69,7 +64,9 @@ public class SearchPartnerFragment extends Fragment {
    }
 
    private void showSearchResults(PartnerSearchResponse response) {
-      ((TextView) view.findViewById(R.id.search_result_view)).setText(response.json);
+      //todo get the resulting egg as well
+      Dragon dragon = Dragon.fromPartnerSearchResponse(response);
+      PartnerSearchResultActivity.callMe(this, dragon);
    }
 
    //todo make separate class, use message bus
