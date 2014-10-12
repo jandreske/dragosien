@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/caption_dragon_name"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
         <View
             android:layout_width="0dp"
@@ -38,15 +38,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/blue"
             android:id="@+id/tv_dragon_name"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="1dp" />
 
         </LinearLayout>
 
 
     <View
         android:layout_width="1dp"
-        android:layout_height="10dp" />
+        android:layout_height="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/caption_dragon_owner"
-            android:textSize="16sp"/>
+            android:textSize="18sp"/>
 
         <View
             android:layout_width="0dp"
@@ -68,8 +73,146 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_dragon_owner"
-            android:textSize="16sp"/>
+            android:textColor="@color/blue"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="1dp" />
 
         </LinearLayout>
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="40dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/brown"
+            android:text="@string/strength"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/brown"
+            android:textSize="18sp"
+            android:id="@+id/tv_strength_value"/>
+
+        </LinearLayout>
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/darkblue"
+            android:text="@string/agility"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkblue"
+            android:textSize="18sp"
+            android:id="@+id/tv_agility_value"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:text="@string/firepower"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:id="@+id/tv_firepower_value"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:text="@string/willpower"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            android:id="@+id/tv_willpower_value"/>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/yellow"
+            android:text="@string/intelligence"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            android:id="@+id/tv_intelligence_value"/>
+
+    </LinearLayout>
 
 </LinearLayout>

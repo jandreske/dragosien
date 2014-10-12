@@ -36,17 +36,24 @@ public class PartnerSearchResultActivity extends ActionBarActivity {
    }
 
    private void updateUI() {
+      //dragon name, with link to profile
       TextView tvName = (TextView) findViewById(R.id.tv_dragon_name);
       tvName.setText(dragon.name);
       tvName.setTag(DRAGON_BASE_URL + dragon.name);
       tvName.setOnClickListener(linkListener);
-      tvName.setTextColor(getResources().getColor(R.color.blue));
 
+      //dragon owner, with link to profile
       TextView tvOwner = (TextView) findViewById(R.id.tv_dragon_owner);
       tvOwner.setText(dragon.owner);
       tvOwner.setTag(OWNER_BASE_URL + dragon.owner);
       tvOwner.setOnClickListener(linkListener);
-      tvOwner.setTextColor(getResources().getColor(R.color.blue));
+
+      //values
+      ((TextView) findViewById(R.id.tv_strength_value)).setText(Integer.toString(dragon.strength));
+      ((TextView) findViewById(R.id.tv_agility_value)).setText(Integer.toString(dragon.agility));
+      ((TextView) findViewById(R.id.tv_firepower_value)).setText(Integer.toString(dragon.firepower));
+      ((TextView) findViewById(R.id.tv_willpower_value)).setText(Integer.toString(dragon.willpower));
+      ((TextView) findViewById(R.id.tv_intelligence_value)).setText(Integer.toString(dragon.intelligence));
    }
 
    private View.OnClickListener linkListener = new View.OnClickListener() {

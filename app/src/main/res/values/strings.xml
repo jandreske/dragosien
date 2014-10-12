@@ -12,10 +12,14 @@
     <string name="search_parter_caption_colors">Farben</string>
     <string name="search_parter_caption_dragball_position">Dragball Position</string>
     <string name="caption_button_search_partner">Partner suchen</string>
-    <string name="title_activity_partner_search_result">PartnerSearchResultActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="search_result_title">Ergebnis der Partnersuche</string>
     <string name="caption_dragon_name">Names des Drachen:</string>
     <string name="caption_dragon_owner">Besitzer des Drachen:</string>
+    <string name="strength">Kraft</string>
+    <string name="agility">Geschicklichkeit</string>
+    <string name="firepower">Feuerkraft</string>
+    <string name="willpower">Willenskraft</string>
+    <string name="intelligence">Intelligenz</string>
 
 </resources>
