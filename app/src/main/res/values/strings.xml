@@ -21,5 +21,6 @@
     <string name="firepower">Feuerkraft</string>
     <string name="willpower">Willenskraft</string>
     <string name="intelligence">Intelligenz</string>
+    <string name="searching_for_partner">Es wird ein Partner gesucht…</string>
 
 </resources>

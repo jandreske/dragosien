@@ -1,5 +1,6 @@
 package de.dragosien.landryn.dragosien.fragments;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -29,25 +29,36 @@ import de.dragosien.landryn.dragosien.objects.PartnerSearchResponse;
 public class SearchPartnerFragment extends Fragment {
 
    private View view;
+   private ProgressDialog progress;
 
    @Override
    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       // Inflate the layout for this fragment
       view = inflater.inflate(R.layout.fragment_search_partner, container, false);
       view.findViewById(R.id.button_search_partner).setOnClickListener(searchClickListener);
+      progress = new ProgressDialog(getActivity());
       return view;
+   }
+
+   @Override
+   public void onPause() {
+      progress.dismiss();
+      super.onPause();
    }
 
    private View.OnClickListener searchClickListener = new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+         progress.setCancelable(false);
+         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+         progress.setMessage(getString(R.string.searching_for_partner));
+         progress.show();
          Dragon dragon = getDragonFromUI();
          new SearchForPartnerTask(dragon).execute();
       }
    };
 
    private Dragon getDragonFromUI() {
-      View view = getView();
       Dragon dragon = new Dragon();
 
       dragon.gender = ((EditText) view.findViewById(R.id.et_value_sex)).getText().toString();
@@ -64,6 +75,7 @@ public class SearchPartnerFragment extends Fragment {
    }
 
    private void showSearchResults(PartnerSearchResponse response) {
+      progress.dismiss();
       //todo get the resulting egg as well
       Dragon dragon = Dragon.fromPartnerSearchResponse(response);
       PartnerSearchResultActivity.callMe(this, dragon);
