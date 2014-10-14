@@ -54,6 +54,7 @@ public class SearchPartnerFragment extends Fragment {
          progress.setMessage(getString(R.string.searching_for_partner));
          progress.show();
          Dragon dragon = getDragonFromUI();
+         //todo move asynctask to result and call result which then calls the task
          new SearchForPartnerTask(dragon).execute();
       }
    };
