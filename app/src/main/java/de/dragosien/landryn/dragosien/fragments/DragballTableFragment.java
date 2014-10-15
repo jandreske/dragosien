@@ -75,7 +75,7 @@ public class DragballTableFragment extends Fragment {
 
    private void showDragballTables(String response) {
       WebView webview = (WebView) view.findViewById(R.id.wvDragballTable);
-      webview.loadData(response,"text/html", "UTF-8");
+      webview.loadDataWithBaseURL(null, response, "text/html", "utf-8", null);
    }
 
 
