@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -35,7 +37,18 @@ public class SearchPartnerFragment extends Fragment {
    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       // Inflate the layout for this fragment
       view = inflater.inflate(R.layout.fragment_search_partner, container, false);
+
+      //search button
       view.findViewById(R.id.button_search_partner).setOnClickListener(searchClickListener);
+
+      //spinner gender
+      Spinner gender = (Spinner) view.findViewById(R.id.spinnerGender);
+      gender.setAdapter(new ArrayAdapter<Dragon.Gender>(getActivity(), android.R.layout.simple_spinner_item, Dragon.Gender.values()));
+
+      //spinner dragball position
+      Spinner position = (Spinner) view.findViewById(R.id.spinnerPosition);
+      position.setAdapter(new ArrayAdapter<Dragon.DragballPosition>(getActivity(), android.R.layout.simple_spinner_item, Dragon.DragballPosition.values()));
+
       progress = new ProgressDialog(getActivity());
       return view;
    }
@@ -60,10 +73,11 @@ public class SearchPartnerFragment extends Fragment {
    };
 
    private Dragon getDragonFromUI() {
+      //todo enums with values etc
       Dragon dragon = new Dragon();
 
-      dragon.gender = ((EditText) view.findViewById(R.id.et_value_sex)).getText().toString();
-      dragon.position = ((EditText) view.findViewById(R.id.et_value_dragball_position)).getText().toString();
+      dragon.gender = (Dragon.Gender) ((Spinner) view.findViewById(R.id.spinnerGender)).getSelectedItem();
+      dragon.position = (Dragon.DragballPosition) ((Spinner) view.findViewById(R.id.spinnerPosition)).getSelectedItem();
       dragon.mainColor = ((EditText) view.findViewById(R.id.et_value_main_color)).getText().toString();
       dragon.secondColor = ((EditText) view.findViewById(R.id.et_value_secondary_color)).getText().toString();
       dragon.strength = Integer.parseInt(((EditText) view.findViewById(R.id.et_value_strength)).getText().toString());
@@ -120,7 +134,7 @@ public class SearchPartnerFragment extends Fragment {
 
       private URI getRequestUrl(Dragon dragon) {
          String urlString = BASE_URL
-               + dragon.gender + DELIMITER
+               + dragon.gender.shortCode() + DELIMITER
                + dragon.mainColor + DELIMITER
                + dragon.secondColor + DELIMITER
                + dragon.strength + DELIMITER
@@ -128,7 +142,7 @@ public class SearchPartnerFragment extends Fragment {
                + dragon.firepower + DELIMITER
                + dragon.willpower + DELIMITER
                + dragon.intelligence + DELIMITER
-               + dragon.position;
+               + dragon.position.shortCode();
          return URI.create(urlString);
       }
 

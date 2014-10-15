@@ -7,22 +7,76 @@ import java.io.Serializable;
 
 public class Dragon implements Serializable {
 
-   //todo creating enums for position, gender, colors
+   //todo creating enums for position, shortcode, colors
 
    public String name;
-   public String gender;
+   public Gender gender;
    public String owner;
-
    public int strength;
    public int agility;
    public int firepower;
    public int willpower;
    public int intelligence;
-
-   public String position;
-
+   public DragballPosition position;
    public String mainColor;
    public String secondColor;
+
+   public enum Gender {
+      MALE("m", "männlich"), FEMALE("w", "weiblich");
+
+      private String shortcode;
+      private String display;
+
+      private Gender(String shortcode, String display) {
+         this.shortcode = shortcode;
+         this.display = display;
+      }
+
+      public String toString() {
+         return display;
+      }
+
+      public String shortCode() {
+         return shortcode;
+      }
+
+      public static Gender fromString(String gender) {
+         if (gender.equals("m")) return MALE;
+         if (gender.equals("w")) return FEMALE;
+         throw new RuntimeException("Invalid Gender: " + gender);
+      }
+   }
+
+   //todo strings to strings, maybe own class?
+   public enum DragballPosition {
+      AA("AA", "Angriff Außen"), AM("AM", "Angriff Mitte"), MA("MA", "Mitte Außen"), VM("VM", "Verteidigung Mitte"), VA("VA", "Verteidigung Außen"), T("T", "Tor");
+
+      private String shortcode;
+      private String display;
+
+      private DragballPosition(String shortcode, String display) {
+         this.shortcode = shortcode;
+         this.display = display;
+      }
+
+      public String shortCode() {
+         return shortcode;
+      }
+
+      public String toString() {
+         return display;
+      }
+
+      public static DragballPosition fromString(String position) {
+         if (position.equals("AA")) return AA;
+         if (position.equals("AM")) return AM;
+         if (position.equals("MA")) return MA;
+         if (position.equals("VA")) return VA;
+         if (position.equals("VM")) return VM;
+         if (position.equals("T")) return T;
+         throw new RuntimeException("Invalid Dragball Position: " + position);
+      }
+   }
 
    //todo make constants (in PartnerSeachResponse?)
    public static Dragon fromPartnerSearchResponse(PartnerSearchResponse response) {

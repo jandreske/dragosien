@@ -26,5 +26,6 @@
     <string name="egg">Ei</string>
     <string name="main_color">Hauptfarbe Ei</string>
     <string name="secondary_color">Nebenfarbe Ei</string>
+    <string name="your_dragon_title">Dein Drache</string>
 
 </resources>

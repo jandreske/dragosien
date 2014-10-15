@@ -3,9 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:padding="10dp"
     tools:context="de.dragosien.landryn.dragosien.fragments.SearchPartnerFragment">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/your_dragon_title"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
 
     <!-- sex -->
 
@@ -15,11 +24,10 @@
         android:textSize="10pt"
         android:text="@string/search_parter_caption_sex" />
 
-    <EditText
-        android:id="@+id/et_value_sex"
+    <Spinner
+        android:id="@+id/spinnerGender"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="m"/>
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="1dp"
@@ -173,11 +181,10 @@
         android:textSize="10pt"
         android:text="@string/search_parter_caption_dragball_position" />
 
-    <EditText
-        android:id="@+id/et_value_dragball_position"
+    <Spinner
+        android:id="@+id/spinnerPosition"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AA"/>
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="1dp"
