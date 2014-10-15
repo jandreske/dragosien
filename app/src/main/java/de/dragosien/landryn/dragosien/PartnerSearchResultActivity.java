@@ -61,6 +61,11 @@ public class PartnerSearchResultActivity extends ActionBarActivity {
       ((TextView) findViewById(R.id.tv_firepower_value_egg)).setText(Integer.toString(egg.firepower));
       ((TextView) findViewById(R.id.tv_willpower_value_egg)).setText(Integer.toString(egg.willpower));
       ((TextView) findViewById(R.id.tv_intelligence_value_egg)).setText(Integer.toString(egg.intelligence));
+
+      //colors egg
+      ((TextView) findViewById(R.id.tv_main_color_value_egg)).setText(egg.mainColor);
+      ((TextView) findViewById(R.id.tv_secondary_color_value_egg)).setText(egg.secondColor);
+
    }
 
    private View.OnClickListener linkListener = new View.OnClickListener() {

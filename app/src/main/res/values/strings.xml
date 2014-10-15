@@ -24,5 +24,7 @@
     <string name="searching_for_partner">Es wird ein Partner gesucht…</string>
     <string name="dragon">Drache</string>
     <string name="egg">Ei</string>
+    <string name="main_color">Hauptfarbe Ei</string>
+    <string name="secondary_color">Nebenfarbe Ei</string>
 
 </resources>
